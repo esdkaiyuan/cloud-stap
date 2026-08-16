@@ -18,10 +18,19 @@ public class WebConfig implements WebMvcConfigurer {
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin(allowedOrigins);
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         config.setMaxAge(3600L);
+
+        // Support comma-separated origins
+        if (allowedOrigins.contains(",")) {
+            String[] origins = allowedOrigins.split(",");
+            for (String origin : origins) {
+                config.addAllowedOrigin(origin.trim());
+            }
+        } else {
+            config.addAllowedOrigin(allowedOrigins);
+        }
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/api/**", config);

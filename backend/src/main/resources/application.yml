@@ -2,17 +2,8 @@ spring:
   application:
     name: disk-share
 
-  # DataSource - MySQL (production)
-  # Uncomment below and comment H2 config for production
-  # datasource:
-  #   url: jdbc:mysql://localhost:3306/disk_share?useSSL=false&serverTimezone=UTC&characterEncoding=utf8mb4
-  #   username: root
-  #   password: ${DB_PASSWORD:root}
-  #   driver-class-name: com.mysql.cj.jdbc.Driver
-
-  # DataSource - H2 (development)
   datasource:
-    url: jdbc:h2:file:./data/disk_share;AUTO_SERVER=TRUE
+    url: jdbc:h2:file:${DATA_DIR:./data}/disk_share;AUTO_SERVER=TRUE
     username: sa
     password:
     driver-class-name: org.h2.Driver
@@ -34,21 +25,21 @@ spring:
       path: /h2-console
 
 server:
-  port: 8080
+  port: ${PORT:8080}
   servlet:
     encoding:
       charset: UTF-8
       enabled: true
       force: true
 
-# CORS
+# CORS - comma-separated origins
 app:
   cors:
-    allowed-origins: http://localhost:5173
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000,https://esdkaiyuan.github.io}
 
 # Logging
 logging:
   level:
-    com.disk.share: DEBUG
-    org.hibernate.SQL: DEBUG
-    org.springframework.web: DEBUG
+    com.disk.share: INFO
+    org.hibernate.SQL: INFO
+    org.springframework.web: INFO

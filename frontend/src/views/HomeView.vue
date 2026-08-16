@@ -74,7 +74,14 @@
           <p v-if="resource.description" class="card-desc">{{ resource.description }}</p>
           <div class="card-meta">
             <span v-if="resource.category" class="card-category">{{ resource.category }}</span>
-            <span v-if="resource.sourceType" class="card-source">{{ sourceLabel(resource.sourceType) }}</span>
+            <div v-if="resource.sourceType" class="card-source">{{ sourceLabel(resource.sourceType) }}</span>
+          <span v-if="resource.extractCode" class="card-extract-code">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            提取码: {{ resource.extractCode }}
+          </span>
           </div>
           <div class="card-footer">
             <time class="card-time">{{ formatDate(resource.createdAt) }}</time>
@@ -378,6 +385,23 @@ export default {
   background: var(--color-bg-secondary);
   color: var(--color-text-muted);
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-extract-code {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .card-footer {

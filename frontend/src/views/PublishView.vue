@@ -61,6 +61,24 @@
           ></textarea>
         </div>
 
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" v-model="form.hasExtractCode" />
+            <span>此链接需要提取码</span>
+          </label>
+        </div>
+        <div v-if="form.hasExtractCode" class="form-group">
+          <label class="form-label" for="extractCode">提取码</label>
+          <input
+            id="extractCode"
+            v-model="form.extractCode"
+            type="text"
+            placeholder="如：abcd"
+            maxlength="50"
+            class="extract-input"
+          />
+        </div>
+
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="category">分类</label>
@@ -111,7 +129,7 @@ export default {
   name: 'PublishView',
   data() {
     return {
-      form: { title: '', url: '', description: '', category: '', sourceType: '' },
+      form: { title: '', url: '', description: '', category: '', sourceType: '', hasExtractCode: false, extractCode: '' },
       submitting: false,
       message: '',
       messageType: 'success',
@@ -128,12 +146,13 @@ export default {
           description: this.form.description.trim(),
           url: this.form.url.trim(),
           category: this.form.category.trim() || undefined,
-          sourceType: this.form.sourceType || undefined
+          sourceType: this.form.sourceType || undefined,
+          extractCode: this.form.hasExtractCode && this.form.extractCode.trim() ? this.form.extractCode.trim() : undefined
         }
         await resourceApi.create(payload)
         this.message = '资源发布成功！正在跳转...'
         this.messageType = 'success'
-        this.form = { title: '', url: '', description: '', category: '', sourceType: '' }
+        this.form = { title: '', url: '', description: '', category: '', sourceType: '', hasExtractCode: false, extractCode: '' }
         this.errors = { title: '', url: '' }
         setTimeout(() => this.$router.push('/'), 1200)
       } catch (e) {
@@ -317,6 +336,42 @@ export default {
 }
 
 .form-select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.extract-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+  letter-spacing: 0.15em;
+}
+
+.extract-input:focus {
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
 }

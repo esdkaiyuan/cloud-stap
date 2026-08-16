@@ -102,6 +102,7 @@ public class ResourceServiceImpl implements ResourceService {
                 .url(request.getUrl().trim())
                 .category(request.getCategory() != null ? request.getCategory().trim() : "")
                 .sourceType(request.getSourceType() != null ? request.getSourceType().trim() : "other")
+                .extractCode(request.getExtractCode() != null ? request.getExtractCode().trim() : "")
                 .views(0)
                 .downloads(0)
                 .ratingSum(0)
@@ -194,6 +195,7 @@ public class ResourceServiceImpl implements ResourceService {
         return new ResourceResponse(
                 resource.getId(), resource.getTitle(), resource.getDescription(),
                 resource.getUrl(), resource.getCategory(), resource.getSourceType(),
+                resource.getExtractCode(),
                 resource.getViews(), resource.getDownloads(), avgRating,
                 resource.getRatingCount(), resource.getActive(),
                 resource.getCreatedAt(), resource.getUpdatedAt()

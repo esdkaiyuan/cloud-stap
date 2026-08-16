@@ -16,6 +16,13 @@
         <div class="detail-meta">
           <span v-if="resource.category" class="meta-tag">{{ resource.category }}</span>
           <span v-if="resource.sourceType" class="meta-tag">{{ sourceLabel(resource.sourceType) }}</span>
+          <span v-if="resource.extractCode" class="meta-tag meta-extract">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            提取码: {{ resource.extractCode }}
+          </span>
         </div>
         <div class="detail-stats">
           <span class="stat-item">
@@ -137,6 +144,16 @@ export default {
   border-radius: var(--radius-sm);
   background: var(--color-bg-secondary);
   color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.meta-extract {
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
 .detail-stats {
   display: flex;

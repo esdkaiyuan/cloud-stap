@@ -25,4 +25,7 @@ public class ResourceRequest {
 
     @Size(max = 50, message = "来源类型长度不能超过50个字符")
     private String sourceType;
+
+    @Size(max = 50, message = "提取码长度不能超过50个字符")
+    private String extractCode;
 }

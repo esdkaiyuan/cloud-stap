@@ -35,6 +35,9 @@ public class Resource {
     @Column(length = 50)
     private String sourceType;  // baidu, ali, tianyi, 123, xunlei, quark, uc, 115, other
 
+    @Column(length = 50)
+    private String extractCode;
+
     @Column(nullable = false)
     @Builder.Default
     private Integer views = 0;

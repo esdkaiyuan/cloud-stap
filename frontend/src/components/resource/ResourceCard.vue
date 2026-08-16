@@ -13,6 +13,15 @@
 
       <p class="card-description">{{ resource.description }}</p>
 
+      <div v-if="resource.extractCode" class="card-extract-code">
+        <svg class="extract-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <span class="extract-label">提取码</span>
+        <span class="extract-value">{{ resource.extractCode }}</span>
+      </div>
+
       <div class="card-footer">
         <div class="card-stats">
           <span class="stat">
@@ -162,6 +171,38 @@ function truncateUrl(url) {
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 0.75rem;
+}
+
+.card-extract-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  margin-bottom: 0.6rem;
+}
+
+.extract-icon {
+  width: 13px;
+  height: 13px;
+  color: #b45309;
+  flex-shrink: 0;
+}
+
+.extract-label {
+  font-size: 0.7rem;
+  color: #a16207;
+  font-weight: 500;
+}
+
+.extract-value {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #78350f;
+  font-weight: 700;
+  letter-spacing: 0.2em;
 }
 
 .card-footer {

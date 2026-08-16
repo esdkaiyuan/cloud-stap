@@ -16,6 +16,7 @@ public class ResourceResponse {
     private String url;
     private String category;
     private String sourceType;
+    private String extractCode;
     private Integer views;
     private Integer downloads;
     private Double avgRating;

@@ -1,0 +1,27 @@
+#!/bin/sh
+# -----------------------------------------------------------------------------
+# Maven Wrapper shell script
+# -----------------------------------------------------------------------------
+
+PRG="$0"
+while [ -h "$PRG" ] ; do
+    ls=`ls -ld "$PRG"`
+    link=`expr "$ls" : '.*-> \(.*\)$'`
+    if expr "$link" : '/.*' > /dev/null; then
+        PRG="$link"
+    else
+        PRG=`dirname "$PRG"`"/$link"
+    fi
+done
+
+APP_NAME="NetDisk Share Backend"
+APP_BASE_NAME=`basename "$0"`
+
+CLASSPATH=$APP_HOME"/.mvn/wrapper/maven-wrapper.jar"
+
+exec "$JAVACMD" \
+  "-Dmaven.multiModuleProjectDirectory=$APP_HOME" \
+  -classpath "$CLASSPATH" \
+  "-Dmaven.home=$M2_HOME" \
+  "-Dmaven.multiModuleProjectDirectory=$APP_HOME" \
+  org.apache.maven.wrapper.MavenWrapperMain "$@"

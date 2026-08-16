@@ -74,7 +74,7 @@
           <p v-if="resource.description" class="card-desc">{{ resource.description }}</p>
           <div class="card-meta">
             <span v-if="resource.category" class="card-category">{{ resource.category }}</span>
-            <div v-if="resource.sourceType" class="card-source">{{ sourceLabel(resource.sourceType) }}</span>
+            <span v-if="resource.sourceType" class="card-source">{{ sourceLabel(resource.sourceType) }}</span>
           <span v-if="resource.extractCode" class="card-extract-code">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;">
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>

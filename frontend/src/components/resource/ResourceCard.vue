@@ -60,6 +60,10 @@ const sourceMap = {
   ali: { label: '阿里云盘', class: 'source-ali' },
   tianyi: { label: '天翼云盘', class: 'source-tianyi' },
   '123': { label: '123云盘', class: 'source-123' },
+  xunlei: { label: '迅雷网盘', class: 'source-xunlei' },
+  quark: { label: '夸克网盘', class: 'source-quark' },
+  uc: { label: 'UC网盘', class: 'source-uc' },
+  '115': { label: '115网盘', class: 'source-115' },
   other: { label: '其他', class: 'source-other' }
 }
 
@@ -143,6 +147,10 @@ function truncateUrl(url) {
 .source-ali { color: #0d9488; background: #f0fdfa; }
 .source-tianyi { color: #d97706; background: #fffbeb; }
 .source-123 { color: #7c3aed; background: #f5f3ff; }
+.source-xunlei { color: #e53935; background: #fef2f2; }
+.source-quark { color: #6d28d9; background: #f5f3ff; }
+.source-uc { color: #ea580c; background: #fff7ed; }
+.source-115 { color: #0891b2; background: #ecfeff; }
 .source-other { color: #6c757d; background: #f8f9fa; }
 
 .card-description {

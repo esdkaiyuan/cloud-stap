@@ -7,4 +7,8 @@ INSERT INTO resources (title, description, url, category, source_type, views, do
 ('Docker 容器化部署实战', '从 Dockerfile 到 K8s 编排的完整容器化方案', 'https://www.123pan.com/s/xxxxx5', 'DevOps', '123', 89, 34, 0, 0, true, NOW(), NOW()),
 ('Redis 设计与实现', '深入理解 Redis 内部数据结构与持久化机制', 'https://pan.baidu.com/s/xxxxx6', 'Programming', 'baidu', 167, 56, 0, 0, true, NOW(), NOW()),
 ('机器学习入门到精通', '包含线性回归、神经网络、CNN 等经典算法实现', 'https://www.aliyundrive.com/s/xxxxx7', 'AI/ML', 'ali', 340, 120, 0, 0, true, NOW(), NOW()),
-('MySQL 性能优化指南', '索引优化、查询调优、架构设计完整方案', 'https://pan.baidu.com/s/xxxxx8', 'Database', 'baidu', 98, 42, 0, 0, true, NOW(), NOW());
+('MySQL 性能优化指南', '索引优化、查询调优、架构设计完整方案', 'https://pan.baidu.com/s/xxxxx8', 'Database', 'baidu', 98, 42, 0, 0, true, NOW(), NOW()),
+('影视资源合集', '最新电影、电视剧、综艺高清资源分享', 'https://pan.xunlei.com/s/xxxxx9', 'Media', 'xunlei', 620, 310, 0, 0, true, NOW(), NOW()),
+('考研资料大礼包', '数学、英语、政治全套复习资料', 'https://pan.quark.cn/s/xxxxx10', 'Education', 'quark', 890, 445, 0, 0, true, NOW(), NOW()),
+('软件工具合集', '常用开发工具、设计软件、办公软件安装包', 'https://drive.uc.cn/s/xxxxx11', 'Software', 'uc', 200, 88, 0, 0, true, NOW(), NOW()),
+('经典电子书库', '各领域经典书籍 PDF /epub 格式合集', 'https://115.com/s/xxxxx12', 'Books', '115', 440, 220, 0, 0, true, NOW(), NOW());

@@ -33,7 +33,7 @@ public class Resource {
     private String category;
 
     @Column(length = 50)
-    private String sourceType;  // baidu, ali, tianyi, 123, other
+    private String sourceType;  // baidu, ali, tianyi, 123, xunlei, quark, uc, 115, other
 
     @Column(nullable = false)
     @Builder.Default

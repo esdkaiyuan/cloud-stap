@@ -50,7 +50,7 @@
 import { resourceApi } from '@/api/index.js'
 
 const SOURCE_MAP = {
-  baidu: '百度网盘', ali: '阿里云盘', tianyi: '天翼云盘', '123': '123云盘', other: '其他'
+  baidu: '百度网盘', ali: '阿里云盘', tianyi: '天翼云盘', '123': '123云盘', xunlei: '迅雷网盘', quark: '夸克网盘', uc: 'UC网盘', '115': '115网盘', other: '其他'
 }
 
 export default {

@@ -44,7 +44,7 @@
             id="url"
             v-model="form.url"
             type="url"
-            placeholder="https://pan.baidu.com/s/xxxxx"
+            placeholder="https://pan.baidu.com/s/xxxxx 或分享链接"
             :class="{ 'input-error': errors.url }"
             @blur="validateField('url')"
           />
@@ -79,6 +79,10 @@
               <option value="ali">阿里云盘</option>
               <option value="tianyi">天翼云盘</option>
               <option value="123">123云盘</option>
+              <option value="xunlei">迅雷网盘</option>
+              <option value="quark">夸克网盘</option>
+              <option value="uc">UC网盘</option>
+              <option value="115">115网盘</option>
               <option value="other">其他</option>
             </select>
           </div>
